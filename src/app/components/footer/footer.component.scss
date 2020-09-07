@@ -1,0 +1,41 @@
+.footer {
+//   max-height: 70px;
+  background: linear-gradient(to bottom, #ffffff, #d6d6d6);
+  box-shadow: 0px -5px 11px -2px rgba(0, 0, 0, 0.75);
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+}
+
+.navbar-nav {
+  display: flex;
+  -webkit-box-flex: 1;
+  flex: 1 0 30vw;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.navbar {
+  position: fixed;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  // overflow: hidden;
+}
+
+.navbar-brand img {
+  height: 75px;
+  width: 150px;
+  padding: 10px;
+  -webkit-box-flex: 0;
+  // flex: 0 1 20vw;
+  text-align: center;
+}
+.nav-link {
+color: black;
+font-weight: bolder;
+}

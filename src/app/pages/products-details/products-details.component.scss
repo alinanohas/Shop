@@ -1,0 +1,143 @@
+.image-container {
+  width: 30%;
+  height: 85vh;
+  padding-left: 30px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  float: left;
+}
+
+// .imageCont{
+
+// }
+.imageBlock {
+  float: left;
+}
+
+.image-container img {
+  height: auto;
+  width: 100%;
+}
+
+.image-container .carousel {
+  height: 500px;
+  width: auto;
+
+}
+
+.carousel img {
+  height: auto;
+  width: 100%;
+  transition: all 0.5s;
+}
+
+.selection {
+  width: 100px;
+  display: inline-flex;
+  flex-direction: column;
+
+}
+
+img {
+  height: 120px;
+  width: auto;
+  float: left;
+
+  &:hover {
+    // border:1px solid black;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.452), 0 10px 10px rgba(0, 0, 0, 0.438);
+
+  }
+}
+
+.iformation {
+  float: right;
+  width: 50%;
+}
+
+s {
+  color: rgb(133, 132, 132);
+}
+
+.sale {
+  font-size: 15px;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  // padding-bottom: -22px;
+  top: -10px;
+  width: 40px;
+  height: 20px;
+  background-color: #900000;
+  color: white;
+}
+
+.buttons a,
+.btn {
+  margin: 10px 0px;
+  height: 30px;
+  padding: 5px 11px;
+  color: #000000;
+  text-transform: uppercase;
+  background: #ffffff;
+  display: inline-block;
+  vertical-align: top;
+  transition: all 0.7s;
+  //   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
+  border: 2px solid #000000;
+  border-radius: 6px;
+  transition: all 0.3s ease 0s;
+}
+
+.buttons a:hover {
+  background-color: #494949;
+  color: white;
+  border-radius: 50px;
+  border-color: #494949;
+  transition: all 0.3s ease 0s;
+}
+
+@media all and (max-width: 780px) {
+
+  .buttons a,
+  .btn {
+    height: 23px;
+    font-size: 10px;
+  }
+
+  p {
+    font-size: 13px;
+  }
+
+  .selection {
+    width: 90px;
+  }
+
+  .image-container img {
+    height: 360px;
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 430px) {
+  .image-container {
+    display: none;
+  }
+
+  .selection {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+  }
+
+  img {
+    height: auto;
+    width: 100%;
+    float: left;
+  }
+  .iformation{
+    width: 90%;
+    margin: auto; 
+  }
+}

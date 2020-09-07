@@ -1,0 +1,249 @@
+<div class="container-fluid">
+  <div class="leftBar">
+    <div class="filter">
+      <p>Filter by category</p>
+
+      <div class="pretty  p-svg p-round p-smooth" *ngFor="let sub of arrSubcategory">
+        <input type="checkbox" value="sub.id" (change)="getSelectedSub($event, sub)" name="selectedSubcat" />
+        <div class="state ">
+          <svg class="svg svg-icon" viewBox="0 0 20 20">
+            <path
+              d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+              style="stroke: white;fill:white;"></path>
+          </svg>
+          <label id="circle"
+            style="background:linear-gradient(0deg, rgba(105,105,105,1) 0%, rgba(179,179,179,0.1741071428571429) 100%);">{{sub.subcategoryName}}</label>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="filter">
+      <p>Filter by color</p>
+      <div class="pretty  p-svg p-round p-smooth" *ngFor="let col of arrColor">
+
+        <input type="checkbox" value="col.id" (change)="getSelectedCol($event, col)" name="selectedColor" />
+        <div class="state">
+          <svg class="svg svg-icon" viewBox="0 0 20 20">
+            <path
+              d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+              style="stroke: white;fill:white;"></path>
+          </svg>
+          <label id="circle"
+            style="background:linear-gradient(0deg, rgba(105,105,105,1) 0%, rgba(179,179,179,0.1741071428571429) 100%);">{{col.colorName}}</label>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="filter">
+      <p>Filter by size</p>
+      <div class="pretty  p-svg p-round p-smooth" *ngFor="let siz of arrSize">
+
+        <input type="checkbox" value="siz.id" (change)="getSelectedSize($event, siz)" name="selectedSize" />
+        <div class="state ">
+          <svg class="svg svg-icon" viewBox="0 0 20 20">
+            <path
+              d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+              style="stroke: white;fill:white;"></path>
+          </svg>
+          <label id="circle"
+            style="background:linear-gradient(0deg, rgba(105,105,105,1) 0%, rgba(179,179,179,0.1741071428571429) 100%);">{{siz.sizeName}}</label>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="filter">
+      <p>Vendor</p>
+      <div class="pretty  p-svg p-round p-smooth" *ngFor="let ven of arrVendor">
+
+        <input type="checkbox" value="ven.id" (change)="getSelectedVen($event, ven)" name="selectedVendor" />
+        <div class="state">
+          <svg class="svg svg-icon" viewBox="0 0 20 20">
+            <path
+              d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+              style="stroke: white;fill:white;"></path>
+          </svg>
+          <label id="circle"
+            style="background:linear-gradient(0deg, rgba(105,105,105,1) 0%, rgba(179,179,179,0.1741071428571429) 100%);">{{ven.vendorName}}</label>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="filter pro">
+      <p>Новинки:</p>
+      <div *ngFor="let pr of lastPro" (click)="openModal(template, pr)">
+        <img [attr.src]="pr.image[0]" alt="..." class="lasImg">
+        <p>{{pr.name}}</p>
+      </div>
+    </div>
+
+
+  </div>
+
+  <div class="nav">
+    <p style="text-align: center;"> Filter by:</p>
+    <ul class="bar mr-auto">
+      <li class=" dropdown showDrop" dropdown>
+        <a class=" dropdown-toggle " dropdownToggle id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          category
+        </a>
+        <div [hidden]="showDrop" class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item pretty p-default p-round" *ngFor="let sub of arrSubcategory">
+            <input type="checkbox" value="sub.id" (change)="getSelectedSub($event, sub)" name="selectedSubcat" />
+            <div class="state ">
+              <label>{{sub.subcategoryName}}</label>
+            </div>
+          </a>
+
+        </div>
+      </li>
+      <li class=" dropdown showDrop" dropdown>
+        <a class=" dropdown-toggle" dropdownToggle id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          color
+        </a>
+        <div [hidden]="showDrop" class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item  pretty p-default p-round" *ngFor="let col of arrColor">
+            <input type="checkbox" value="col.id" (change)="getSelectedCol($event, col)" name="selectedColor" />
+            <div class="state">
+              <label>{{col.colorName}}</label>
+            </div>
+          </a>
+        </div>
+      </li>
+      <li class=" dropdown showDrop" dropdown>
+        <a class=" dropdown-toggle" dropdownToggle id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          size
+        </a>
+        <div [hidden]="showDrop" class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item  pretty p-default p-round" *ngFor="let siz of arrSize">
+            <input type="checkbox" value="siz.id" (change)="getSelectedSize($event, siz)" name="selectedSize" />
+            <div class="state">
+              <label>{{siz.sizeName}}</label>
+            </div>
+          </a>
+        </div>
+      </li>
+      <li class="nav-item dropdown showDrop" dropdown>
+        <a class="nav-link dropdown-toggle" dropdownToggle id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Vendor
+        </a>
+        <div [hidden]="showDrop" class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item  pretty p-default p-round" *ngFor="let ven of arrVendor">
+            <input type="checkbox" value="ven.id" (change)="getSelectedVen($event, ven)" name="selectedVendor" />
+            <div class="state">
+              <label>{{ven.vendorName}}</label>
+            </div>
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="content">
+    <div class="mainCards">
+      <div class="product-card"
+        *ngFor="let pr of products | filter: selectedColor | filter: selectedSubcat | filter: selectedSize  | filter:selectedVendor | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize ">
+        <div *ngIf="pr.oldPrice" class="ribbon  ribbon--red">
+          <p>SALE</p>
+        </div>
+        <div class="functional-buttons">
+          <div class="buttons" (click)="addToWish(pr)">
+  
+            <a *ngIf="!pr.status" class="far fa-heart" for='red-check1'> </a>
+            <a *ngIf="pr.status === true" class="fas fa-heart" for='red-check1' style="color: red;"
+              (click)="goToWish()"></a>
+          </div>
+          <div class="buttons">
+            <a class="quick-view" (click)="openModal(template, pr)">
+            </a>
+          </div>
+          <div class="buttons">
+            <a class="addToBasket" (click)="addToCart(pr)">
+            </a>
+          </div>
+        </div>
+        <img  class="product-img" [attr.src]="pr.image[0]" alt="...">
+        <img  class="product-hov-img" [attr.src]="pr.image[1]" alt="...">
+        <div class="proAbout">
+          <p [routerLink]="[ '/shop/'+pr.category, pr.id ]" class="proName">{{pr.name}}</p>
+          <p class="proPrice"> <s *ngIf="pr.oldPrice > 0" [style.font-weight]="'lighter'">{{pr?.oldPrice + '$'}}</s>
+            <a *ngIf="pr.oldPrice" class="text-danger"> -{{ pr?.oldPrice - pr?.newPrice + '$'}}</a>
+            {{pr?.newPrice + '$'}}</p>
+        </div>
+  
+      </div>
+    </div>
+      <ngb-pagination *ngIf="products.length>6" class="d-flex justify-content-center" size="sm" [collectionSize]="products.length" [(page)]="page" [pageSize]="pageSize">
+      </ngb-pagination>
+    
+  </div>
+ 
+
+  <ng-template #template id="modal-dialog">
+    <div class="modal-top">
+
+      <div class="modal-body">
+        <div class="modal-body">
+          <div class="row">
+            <div class="image-container">
+              <carousel>
+                <slide>
+                  <img [attr.src]="view?.image[0]" alt="First slide">
+                </slide>
+                <slide>
+                  <img [attr.src]="view.image[1]" alt="Second slide">
+                </slide>
+                <slide *ngIf="view.image[2]">
+                  <img [attr.src]="view.image[2]" alt="Third slide">
+                </slide>
+              </carousel>
+            </div>
+
+            <div class="col information">
+
+              <div class="modal-header">
+                <h2 class="product-name">
+                  {{view?.name}}
+                </h2>
+                <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+
+              </div>
+
+              <h4 class="h4-responsive">
+                <s *ngIf="view.oldPrice > 0" [style.font-weight]="'lighter'">{{view?.oldPrice + '$'}}</s>
+                {{view?.newPrice + '$'}}
+                <div *ngIf="view.oldPrice" class="sale">
+                  <a *ngIf="view.oldPrice"> -{{ getSale(view) | percent}} </a>
+                </div>
+              </h4>
+              <div class="product-description">
+                <p>{{view?.description}}</p>
+              </div>
+              <ul class="col detail">
+
+                <li>Size: {{view?.size}}</li>
+                <li>Color: {{view?.color}}</li>
+                <li>Vendor: {{view?.vendor}}</li>
+                <li [routerLink]="[ '/shop/'+view.category, view.id ]" (click)="modalRef.hide()" style="text-decoration: underline; cursor: pointer;">Детальніше... <i class="fas fa-long-arrow-alt-right"></i></li>
+              </ul>
+              <div class="text-center">
+                <input type="button" value="close" class="btn btn-secondary" (click)="modalRef.hide()">
+                <input class="btn btn-success" value="Add to cart" (click)="addToCart(view)">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </ng-template>
+</div>

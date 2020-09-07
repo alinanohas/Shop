@@ -1,0 +1,172 @@
+<div class="container-fluid payForm " style="padding-top: 100px;">
+
+  <div class="container-fluid payForm">
+    <nav ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+      <ng-container ngbNavItem="userInfo">
+        <a ngbNavLink>
+          <h1>Особисті дані</h1>
+        </a>
+
+        <ng-template ngbNavContent>
+          <div class="row row-cols-1 row-cols-md-3">
+
+            <form class="form-group col-md-6">
+
+              <div class="form-group">
+                <label for="exampleFormControlInput1">Ім`я</label>
+                <input [(ngModel)]="userName" name="userName" type="text" class="form-control" id="userName"
+                  placeholder="Ваше ім`я*" #name="ngModel" required>
+                <div [hidden]="name.valid || name.untouched" class="alert alert-danger">
+                  Не вказано ім`я
+                </div>
+              </div>
+
+              <div class="form-group ">
+
+                <input [(ngModel)]="userID" name="userID" type="hidden" class="form-control" id="userID">
+              </div>
+
+              <div class="form-group ">
+                <label for="exampleFormControlInput1">Телефон</label>
+                <input [(ngModel)]="userPhone" name="userPhone" type="text" class="form-control" id="userPhone"
+                  placeholder="Телефон*" required>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="exampleFormControlInput1">Місто</label>
+                  <input [(ngModel)]="userCity" name="userCity" type="text" class="form-control" id="userCity"
+                    placeholder="Місто*" required>
+                </div>
+
+                <div class="form-group col-md-4">
+                  <label for="exampleFormControlInput1">Вулиця</label>
+                  <input [(ngModel)]="userStreet" name="userStreet" type="text" class="form-control" id="userStreet"
+                    placeholder="Вулиця*" required>
+                </div>
+                <div class="form-group col-md-2">
+                  <label for="exampleFormControlInput1">Будинок</label>
+                  <input [(ngModel)]="userHouse" name="userHouse" type="text" class="form-control" id="userHouse"
+                    placeholder="Будинок*" required>
+                </div>
+              </div>
+
+              <input hidden [(ngModel)]="uID" name="uID" type="text" class="form-control" id="uID">
+
+              <input type="button" value="ЗБЕРЕГТИ ДАНІ" class="btn btn-dark btn-block" (click)="addInfo()">
+            </form>
+            <div class="info col-md-3" *ngFor="let item of user">
+              <h6 style="text-align: center;">Доступна інформація:</h6>
+              <p><i class="far fa-envelope"></i> Email: <i> {{item.username}} </i></p>
+              <p *ngIf="item.displayName"><i class="far fa-user"></i> Ім'я: <i> {{item.displayName}} </i></p>
+              <p *ngIf="item.phoneNumber"><i class="far fa-address-book"></i> Номер: <i> {{item.phoneNumber}} </i></p>
+              <p *ngIf="item.userCity"><i class="far fa-compass"></i> Місто: <i> {{item.userCity}} </i></p>
+              <p *ngIf="item.userStreet"><i class="far fa-map"></i> Вулиця: <i> {{item.userStreet}} </i></p>
+              <p *ngIf="item.userHouse"><i class="far fa-building"></i> Будинок: <i> {{item.userHouse}} </i></p>
+
+            </div>
+
+
+
+          </div>
+          <div class="back"></div>
+        </ng-template>
+      </ng-container>
+
+      <ng-container ngbNavItem="userWishList">
+        <a ngbNavLink>
+          <h1>Wish list</h1>
+        </a>
+
+        <ng-template ngbNavContent>
+
+          <div class="mainContent">
+            <div class="mainCards">
+              <div class="row cols-md-3">
+                <div class="col mb-4" *ngFor="let pr of products ">
+                  <div class="product-card">
+                    <div *ngIf="pr.oldPrice" class="ribbon  ribbon--red">
+                      <p>SALE</p>
+                    </div>
+                    <div class="functional-buttons">
+                      <div class="buttons">
+                        <a class="fas fa-trash-alt " style="color:red; height: 30px;" (click)="removeWish(pr)">
+                        </a>
+                      </div>
+                      <div class="buttons">
+
+                      </div>
+                      <div class="buttons">
+                        <a class="addToBasket" (click)="addToCart(pr)">
+                        </a>
+                      </div>
+                    </div>
+                    <img class="product-img" [attr.src]="pr.image[0]" alt="...">
+                    <img class="product-hov-img" [attr.src]="pr.image[1]" alt="...">
+                    <div class="proAbout">
+                      <p [routerLink]="[ '/shop/'+pr.category, pr.id ]" class="proName">{{pr.name}}</p>
+                      <p class="proPrice"> <s *ngIf="pr.oldPrice > 0"
+                          [style.font-weight]="'lighter'">{{pr?.oldPrice + '$'}}</s>
+                        <a *ngIf="pr.oldPrice" class="text-danger"> -{{ pr?.oldPrice - pr?.newPrice + '$'}}</a>
+                        {{pr?.newPrice + '$'}}</p>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </ng-container>
+
+      <ng-container ngbNavItem="userShopList">
+        <a ngbNavLink>
+          <h1>Замовлення</h1>
+        </a>
+
+        <ng-template ngbNavContent>
+
+          <h1 *ngIf="!isOrders">Ви ще не здійснювали покупки</h1>
+          <div *ngIf="isOrders" id="collapseExample">
+            <div class="card">
+              <div class="card-body">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Image</th>
+                      <th>Розмір</th>
+                      <th>Ціна</th>
+                      <th class="del">Кількість</th>
+                      <th>Дата</th>
+                    </tr>
+                  </thead>
+                  <tr *ngFor="let pr of orders; let q = index">
+                    <td><img class="shoproduct-img" [attr.src]="pr.image[0]" alt="..."></td>
+                    <td class="dscr"> <b class="pro-name">{{pr.name}}</b> <br> {{pr.size}}</td>
+                    <td>{{pr.newPrice + '$'}}</td>
+                    <td class="del">
+                      <div class="qty">
+                        {{pr.count}}
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-inline">
+                        {{pr?.date}}
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </ng-container>
+
+      <button class="btn btn-warning" (click)="logOut()">logout</button>
+
+    </nav>
+
+
+    <div [ngbNavOutlet]="nav" class="mt-2">
+    </div>
+  </div>
+</div>

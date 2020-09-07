@@ -1,0 +1,82 @@
+<form>
+  <div class="form-group col-md-12 mb-3">
+    <label for="newsCategory">News Category</label>
+    <input [(ngModel)]="newsCategory" name="newsCategory" type="text" class="form-control" id="newsCategory">
+  </div>
+  <div class="form-group col-md-12 mb-3">
+    <label for="blogTitle">Blog Title</label>
+    <input [(ngModel)]="blogTitle" name="blogTitle" type="text" class="form-control" id="blogTitle">
+  </div>
+  <div class="form-group col-md-12 mb-3">
+    <label for="blogNews">Blog News</label>
+    <textarea [(ngModel)]="blogNews" id="blogNews" name="blogNews" type="text" class="form-control" id="blogNews"></textarea>
+  </div>
+
+  <div class="form-group row">
+    <div class="card-body">
+      <h5 class="card-title">Select a file for upload:</h5>
+      <input type="file" name="file" id="file" class="inputfile" (change)="upload($event)" accept=".png,.jpg" />
+      <label for="file"><strong>Choose a file</strong></label>
+      <br><br>
+      <div class="progress">
+        <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
+          [style.width]="(uploadProgress | async) + '%'" [attr.aria-valuenow]="(uploadProgress | async)"
+          aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+      <br>
+      <div *ngIf="downloadURL | async; let downloadSrc" class="alert alert-info" role="alert">
+        File uploaded: <a [href]="downloadSrc">{{downloadSrc}}</a>
+      </div>
+      <br>
+      <div class="viewImg" *ngIf="downloadURL | async; let url">
+        <img [src]="url" alt="Image from AngularFireStorage">
+      </div>
+    </div>
+  </div>
+  <button type="button" class="btn btn-success" (click)="addNews()">ADD</button>
+</form>
+  <div class="card"  *ngFor="let p of arrBlog | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize; let i=index">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Category</th>
+        <th scope="col">News</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{i+1}}</td>
+        <td>{{p.title}}</td>
+        <td>{{p.category}}</td>
+        <td> <p class="blog-news"> {{p.news}} </p></td>
+        <td>
+          <div class="form-inline">
+            <i class="far fa-edit" (click)="editNews(p)" ></i>
+          </div>
+        </td>
+        <td>
+          <div class="form-inline">
+            <i class="fas fa-trash" style="color:#bb3030;" (click)="deleteNews(p)"></i>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+  <div class="d-flex justify-content-between p-2">
+    <ngb-pagination [collectionSize]="arrBlog.length" [(page)]="page" [pageSize]="pageSize">
+    </ngb-pagination>
+  
+    <select class="custom-select" style="width: auto" [(ngModel)]="pageSize">
+      <option [ngValue]="2">2 товари на сторінці</option>
+      <option [ngValue]="4">4 товари на сторінці</option>
+      <option [ngValue]="6">6 товари на сторінці</option>
+    </select>
+  </div>
+
+

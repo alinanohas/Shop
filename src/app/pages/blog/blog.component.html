@@ -1,0 +1,15 @@
+<div class="container-fluid">
+  <div class="blogCard" [style.flex-direction]="odd? 'row' : 'row-reverse'" *ngFor="let bl of blogs; let odd = odd">
+
+    <img [attr.src]="bl.image" alt="...">
+    <div [routerLink]="[ '/blog/', bl.id ]" class="blogNews" [style.right]="odd? '30px' : '-30px'">
+      <p class="chapter text-danger">{{bl.category}}</p>
+      <p class="title-text">{{bl.title}}</p>
+    </div>
+  
+  <div class="text-news"  [style]="odd? 'right: 45px ;' : 'left : 45px'">
+     <p>{{bl.news  | slice:0:400}}...</p> 
+     <input type="button" class="button" [routerLink]="[ '/blog/', bl.id ]" value="Читати далі...">
+    </div>
+  </div>
+</div>

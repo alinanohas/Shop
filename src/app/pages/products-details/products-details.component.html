@@ -1,0 +1,39 @@
+<div class="container-fluid" style="padding-top: 90px;">
+  <div class="image-container" id="block">
+    <img *ngIf=" !changeImage" [attr.src]="view?.image[0]">
+  </div>
+  <div class="selection">
+    <img [attr.src]="view?.image[0]" (click)="clImage($event,view)">
+    <img [attr.src]="view?.image[1]" (click)="clImage($event,view)">
+    <img *ngIf="view?.image[2]" [attr.src]="view?.image[2]" (click)="clImage($event,view)">
+  </div>
+  <div class="iformation">
+    <h2 class="h2-responsive product-name">
+      {{view?.name}} </h2>
+    <h4 class="h4-responsive">
+      <s *ngIf="view?.oldPrice > 0" [style.font-weight]="'lighter'">{{view?.oldPrice + '$'}}</s>
+      {{view?.newPrice + '$'}}
+      <div *ngIf="view?.oldPrice" class="sale">
+        <a> -{{ getSale(view) | percent}} </a>
+      </div>
+    </h4>
+    <div class="product-description">
+      <p>{{view?.description}}</p>
+    </div>
+    <ul class="col detail">
+
+      <li>Size: {{view?.size}}</li>
+      <li>Color: {{view?.color}}</li>
+      <li>Vendor: {{view?.vendor}}</li>
+    </ul>
+    <a class="btn btn-secondary far fa-arrow-alt-circle-left" (click)="backClicked()"
+      style="padding-top: 0px;">Назад</a> <br>
+    <input class="btn btn-secondary" value="Додати у корзину" (click)="addToCart(view)">
+    <div class="buttons">
+      <a *ngIf="!view?.status" class="far fa-heart" for='red-check1' (click)="addToWish(view)">Додати до списку бажань
+      </a>
+      <a *ngIf="view?.status === true" class="fas fa-heart" for='red-check1' style="color: red;" (click)="goToWish()">У
+        списку бажань</a>
+    </div>
+  </div>
+</div>

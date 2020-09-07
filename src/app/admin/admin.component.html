@@ -1,0 +1,23 @@
+<div class="container-fluid" >
+    <div class="row">
+        <div class="col-2 left-bar">
+          <div class="nav flex-column " id="v-pills-tab" role="tablist" aria-orientation="vertical" style="padding-top: 100px;">
+            <a class="nav-link" [routerLink]="[ 'blog' ]" routerLinkActive="active">Blog</a>
+            <a class="nav-link" [routerLink]="[ 'orders' ]" routerLinkActive="active">Orders <span class="basket-counter">{{ orders.length }}</span> </a>
+            <a class="nav-link" [routerLink]="[ 'category' ]" routerLinkActive="active">Category</a>
+            <a class="nav-link" [routerLink]="[ 'subcategory' ]" routerLinkActive="active">Subcategory</a>
+            <a class="nav-link" [routerLink]="[ 'color' ]" routerLinkActive="active">Color</a>
+            <a class="nav-link" [routerLink]="[ 'size' ]" routerLinkActive="active">Size</a>
+            <a class="nav-link" [routerLink]="[ 'vendor' ]" routerLinkActive="active">Vendor</a>            
+            <a class="nav-link" [routerLink]="[ 'products' ]" routerLinkActive="active">Products</a>
+            <a class="nav-link" [routerLink]="[ '/' ]" type="button" (click)="logOut()" class="logout">Вийти <i class="fas fa-sign-out-alt"></i></a>
+
+          </div>
+        </div>
+        <div id="cont" class="col-9 col-s-9" style=" padding-top: 100px;">
+          <div class="tab-content">
+                <router-outlet></router-outlet>
+          </div>
+        </div>
+      </div>
+</div>

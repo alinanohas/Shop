@@ -1,0 +1,120 @@
+<div class="container-fluid">
+  <div id="collapseExample">
+    <div class="card">
+      <div class="card-body">
+        <h4>У Вас {{orders.length}} замовлень</h4>
+
+        <table class="table">
+          <thead>
+            <tr class="head">
+              <th>#</th>
+              <th>Товар</th>
+              <th>Ім'я замовника</th>
+              <th>Телефон</th>
+              <th>Доставка</th>
+              <th>Сума</th>
+              <th>Коментар</th>
+              <th>Видалити</th>
+            </tr>
+          </thead>
+          <tr *ngFor="let o of orders ; let i=index">
+            <td>{{ i+1 }}</td>
+            <td>
+              <div class="card pro">
+                <table>
+                  <tr>
+                    <th class="img-tov" >Товар</th>
+                    <th>Назва</th>
+                    <th>Розмір</th>
+                    <th>Колір</th>
+                  </tr>
+                  <tr  *ngFor="let item of o.ordersDetails">
+                    <td class="img-tov"><img (click)="openModal(template, item)" class="product-img" [attr.src]="item.image[0]"
+                        alt="..."></td>
+                    <td>{{ item.name }}</td>
+                    <td> {{ item.size }} </td>
+                    <td> {{ item.color }} </td>
+                  </tr>
+                </table>
+              </div>
+            </td>
+
+            <td>{{ o.userName }}</td>
+            <td>{{ o.userPhone }}</td>
+            <td>{{ o.userCity }}
+              {{ o.userStreet }},{{ o.userHouse }}
+            </td>
+            <td>{{ o.totalPayment }}</td>
+            <td>{{ o.userComment }}</td>
+            <td>
+              <div class="form-inline">
+                <i class="fas fa-trash" (click)="deleteProduct(o)"></i>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #template id="modal-dialog">
+    <div class="modal-top">
+
+      <div class="modal-body">
+        <div class="modal-body">
+          <div class="row">
+            <div class="image-container">
+              <carousel>
+                <slide>
+                  <img [attr.src]="view?.image[0]" alt="First slide">
+                </slide>
+                <slide>
+                  <img [attr.src]="view.image[1]" alt="Second slide">
+                </slide>
+                <slide *ngIf="view.image[2]">
+                  <img [attr.src]="view.image[2]" alt="Third slide">
+                </slide>
+              </carousel>
+            </div>
+
+            <div class="col information">
+
+              <div class="modal-header">
+                <h2 class="product-name">
+                  {{view?.name}}
+                </h2>
+                <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+
+              </div>
+
+              <h4 class="h4-responsive">
+                <s *ngIf="view.oldPrice > 0" [style.font-weight]="'lighter'">{{view?.oldPrice + '$'}}</s>
+                {{view?.newPrice + '$'}}
+                <div *ngIf="view.oldPrice" class="sale">
+                  <a *ngIf="view.oldPrice"> -{{ getSale(view) | percent}} </a>
+                </div>
+              </h4>
+              <div class="product-description">
+                <p>{{view?.description}}</p>
+              </div>
+              <ul class="col detail">
+
+                <li>Size: {{view?.size}}</li>
+                <li>Color: {{view?.color}}</li>
+                <li>Vendor: {{view?.vendor}}</li>
+                <li [routerLink]="[ '/shop/'+view.category, view.id ]" (click)="modalRef.hide()" style="text-decoration: underline; cursor: pointer;">Детальніше... <i class="fas fa-long-arrow-alt-right"></i></li>
+              </ul>
+              <div class="text-center">
+                <input type="button" value="close" class="btn btn-secondary" (click)="modalRef.hide()">
+                <!-- <input class="btn btn-success" value="Add to cart" (click)="addToCart(view)"> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </ng-template>
+</div>

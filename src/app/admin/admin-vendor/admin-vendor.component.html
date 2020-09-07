@@ -1,0 +1,62 @@
+<form class="form-row">
+  <div class="col-md-9 mb-4">
+    <h2> Vendor </h2>
+  </div>
+  <div class="col-md-2 mt-2">
+    <input type="button" class="btn btn-success btn-block" value="Add" (click)="openModal(template)">
+  </div>
+
+  <!-- <div class="col-md-12 mb-4">
+      <input [(ngModel)]="filterVendor" name="filterVendor" id="filterVendor" type="text" class="form-control">
+    </div> -->
+</form>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let vendor of arrVendor; let i=index;">
+      <td>{{i+1}}</td>
+      <td>{{vendor.vendorName }}</td>
+      <td>
+        <div class="form-inline">
+          <i class="far fa-edit" (click)="editVendor(template, vendor)"></i>
+        </div>
+        <!-- <input (click)="editVendor(template, vendor)" type="button" value="edit" class="btn btn-warning"> -->
+      </td>
+      <td>
+        <div class="form-inline">
+          <i class="fas fa-trash" style="color:#bb3030;" (click)="openModal(deletetemplate)"></i>
+        </div>
+        <ng-template #deletetemplate>
+          <div class="modal-body text-center">
+            <button type="button" class="btn btn-default" (click)="confirm()">Dismiss</button>
+            <button type="button" class="btn btn-primary" (click)="deleteVendor(deletetemplate, vendor)">Delete</button>
+          </div>
+        </ng-template>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Modal</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="form-group">
+      <label for="vendorName">Vendor Name</label>
+      <input [(ngModel)]="vendorName" name="vendorName" type="text" class="form-control" id="vendorName">
+    </div>
+    <input type="button" value="Add vendor" class="btn btn-dark" (click)="addVendor()">
+  </div>
+</ng-template>

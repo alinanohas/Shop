@@ -1,0 +1,143 @@
+<form>
+  <div class="form-row">
+    <div class="col-md-12 mb-3">
+
+      <label for="categoryName">Category</label>
+      <select [(ngModel)]="category" name="category" type="text" class="form-control" id="categoryName">
+        <option *ngFor="let cat of arrCategory" [ngValue]="cat">{{cat.categoryName}}</option>
+      </select>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="subcategoryName">Subcategory</label>
+      <select [(ngModel)]="subcategory" name="subcategory" type="text" class="form-control" id="subcategory">
+        <option *ngFor="let sub of arrSubcategory" [ngValue]="sub">{{sub.subcategoryName}}</option>
+      </select>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="colorName">Color</label>
+      <select [(ngModel)]="color" name="color" type="text" class="form-control" id="color">
+        <option *ngFor="let col of arrColor" [ngValue]="col">{{col.colorName}}</option>
+      </select>
+    </div>
+    <div class="col-md-4 mb-3 ">
+      <label for="sizeName">Size</label>
+      <select [(ngModel)]="size" name="size" type="text" class="form-control" id="size">
+        <option *ngFor="let siz of arrSize" [ngValue]="siz">{{siz.sizeName}}</option>
+      </select>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="vendorName">Vendor</label>
+      <select [(ngModel)]="vendor" name="vendor" type="text" class="form-control" id="vendor">
+        <option *ngFor="let ven of arrVendor" [ngValue]="ven">{{ven.vendorName}}</option>
+      </select>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="productOldPrice">Product old price</label>
+      <input [(ngModel)]="productOldPrice" name="productOldPrice" type="number" class="form-control"
+        id="productOldPrice">
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="productNewPrice">Product new price</label>
+      <input [(ngModel)]="productNewPrice" name="productNewPrice" type="number" class="form-control"
+        id="productNewPrice">
+    </div>
+
+    <div class=" col-md-12 mb-3">
+      <label for="productName">Product Name</label>
+      <input [(ngModel)]="productName" name="productName" type="text" class="form-control" id="productName">
+    </div>
+    <div class=" col-md-12 mb-3">
+      <label for="productDescription">Product Description</label>
+      <textarea [(ngModel)]="productDescription" name="productDescription" type="text" class="form-control"
+        id="productDescription"></textarea>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="card-body" *ngIf="!imageStatus">
+      <h5 class="card-title">Select a file for upload:</h5>
+      <input type="file" name="file" id="file" class="inputfile" (change)="upload($event)" accept=".png,.jpg" />
+      <label for="file"><strong>Choose a file</strong></label>
+      <br><br>
+      <div class="progress">
+        <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
+          [style.width]="(uploadProgress | async) + '%'" [attr.aria-valuenow]="(uploadProgress | async)"
+          aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+      <br>
+      <br>
+    </div>
+    <div class="card-body" *ngIf="imageStatus">
+      <h5 class="card-title">Select a file for upload:</h5>
+      <input type="file" name="file" id="file" class="inputfile" (change)="upload($event)" accept=".png,.jpg" />
+      <label for="file"><strong>Choose a file</strong></label>
+      <br><br>
+      <div class="progress">
+        <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
+          [style.width]="(uploadProgress | async) + '%'" [attr.aria-valuenow]="(uploadProgress | async)"
+          aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+      <br>
+    </div>
+
+    <div class="forImages" *ngFor="let image of imageArr">
+      <img [attr.src]="image" alt="...">
+    </div>
+  </div>
+  <button type="button" class="btn btn-success" (click)="addProduct()">ADD</button>
+</form>
+<br>
+<div class="tbl-header col-md-12">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col" >Image</th>
+        <th scope="col" >Name</th>
+        <th scope="col">Subcategory</th>
+        <th scope="col">Description</th>
+        <th scope="col">Price</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of adminProducts | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize; let i=index">
+        <td>{{p.id}}</td>
+        <td><img [attr.src]="p.image[0]" alt="..." class="lasImg"></td>
+        <td>{{p.name}}</td>
+        <td>{{p.subcategory}}</td>
+        <td> <p class="desc"> {{p.description}} </p></td>
+        <td>{{p.newPrice + '$'}}</td>
+        <td>
+          <div class="form-inline">
+            <i class="far fa-edit" (click)="editProduct(p)"></i>
+          </div>
+        </td>
+        <td>
+          <div class="form-inline">
+            <i class="fas fa-trash" style="color:#bb3030;" (click)="openModal(deletetemplate)"></i>
+          </div>
+          <ng-template #deletetemplate>
+            <div class="modal-body text-center">
+              <h4>Видалити товар?</h4>
+              <button type="button" class="btn btn-default" (click)="confirm()">Відмінити</button>
+              <button type="button" class="btn btn-primary" (click)="deleteProduct(deletetemplate, p)">Видалити</button>
+            </div>
+          </ng-template>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="d-flex justify-content-between p-2">
+    <ngb-pagination [collectionSize]="adminProducts.length" [(page)]="page" [pageSize]="pageSize">
+    </ngb-pagination>
+  
+    <select class="custom-select" style="width: auto" [(ngModel)]="pageSize">
+      <option [ngValue]="2">2 товари на сторінці</option>
+      <option [ngValue]="4">4 товари на сторінці</option>
+      <option [ngValue]="6">6 товари на сторінці</option>
+    </select>
+  </div>
+
+</div>

@@ -1,0 +1,89 @@
+<div class="container-fluid">
+  <div id="collapseExample">
+    <div class="card">
+      <div class="card-body">
+        <h4 *ngIf="shoppingCartItems.length > 0">У Вашій корзині {{shoppingCartItems?.length}} товари
+          <span style="margin-left: 5%;margin-right: 22%;">
+            До сплати: {{ getTotal(shoppingCartItems) + '$'}}</span>
+        </h4>
+        <h4 *ngIf="!shoppingCartItems.length ">Корзина поки що порожня</h4>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Розмір</th>
+              <th>Ціна</th>
+              <th class="del" >Кількість</th>
+              <th>Видалити</th>
+              <th>Всього</th>
+            </tr>
+          </thead>
+          <tr *ngFor="let item of shoppingCartItems;let q = index">
+            <td><img class="product-img" [attr.src]="item.image[0]" alt="..."></td>
+            <td class="dscr"> <b class="pro-name">{{item.name}}</b> <br> {{item.size}}</td>
+            <td>{{item.newPrice + '$'}}</td>
+            <td class="del">
+              <div class="qty">
+                <input type="button" class="btn btn-dark" value="-" (click)="addQuantity(item,false)">
+                {{item.count}}
+                <input type="button" class="btn btn-dark" value="+" (click)="addQuantity(item,true)">
+              </div>
+            </td>
+            <td>
+              <div class="form-inline">
+                <i class="fas fa-trash" (click)="removeItem(item)"></i>
+              </div>
+            </td>
+            <td>{{ gettotalItem(item) + '$'}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="container payForm" *ngIf="shoppingCartItems?.length>0">
+    <h1 class="h1-responsive" >Оформити замовлення</h1>
+
+    <form class="form-group">
+
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Ім`я</label>
+        <input [(ngModel)]="userName" name="userName" type="text" class="form-control" id="userName"
+          placeholder="Ваше ім`я*" #name="ngModel" required>
+      </div>
+
+      <div class="form-group ">
+        <label for="exampleFormControlInput1">Телефон</label>
+        <input [(ngModel)]="userPhone" name="userPhone" type="text" class="form-control" id="userPhone"
+          placeholder="Телефон*" required>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="exampleFormControlInput1">Місто</label>
+          <input [(ngModel)]="userCity" name="userCity" type="text" class="form-control" id="userCity"
+            placeholder="Місто*" required>
+        </div>
+
+        <div class="form-group col-md-4">
+          <label for="exampleFormControlInput1">Вулиця</label>
+          <input [(ngModel)]="userStreet" name="userStreet" type="text" class="form-control" id="userStreet"
+            placeholder="Вулиця*" required>
+        </div>
+        <div class="form-group col-md-2">
+          <label for="exampleFormControlInput1">Будинок</label>
+          <input [(ngModel)]="userHouse" name="userHouse" type="text" class="form-control" id="userHouse"
+            placeholder="Будинок*" required>
+        </div>
+      </div>
+
+      <input type="button" value="ОФОРМИТИ ЗАМОВЛЕННЯ" class="btn btn-dark btn-block" (click)="addOrder()">
+
+
+    </form>
+
+
+
+
+  </div>
+</div>

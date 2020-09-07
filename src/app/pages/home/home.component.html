@@ -1,0 +1,88 @@
+<div class="container-fluid">
+  <carousel>
+    <slide class="slide">
+      <img
+        src="https://firebasestorage.googleapis.com/v0/b/cpcompany.appspot.com/o/images%2Fparis-fashion-week-mens-street-style-fall-2019.jpg?alt=media&token=32b04c41-d50b-4ffd-aa08-a3a90d107699"
+        alt="First slide">
+    </slide>
+    <slide class="slide">
+      <img
+        src="https://firebasestorage.googleapis.com/v0/b/cpcompany.appspot.com/o/images%2Fbest-london-street-style-fall-2019.jpg?alt=media&token=e6b92b35-35c6-4dde-9b18-3a9bccb1d9df"
+        alt="Second slide">
+    </slide>
+    <slide class="slide">
+      <img
+        src="https://firebasestorage.googleapis.com/v0/b/cpcompany.appspot.com/o/images%2F2c5e94b933e581bedfbcfcff14af.jpg?alt=media&token=5d50c97f-6e7b-4cc4-9798-f72213f0e438"
+        alt="Third slide">
+    </slide>
+  </carousel>
+
+  <div class="mainContent">
+    <div class="card bg-dark text-white  col-md-5">
+      <img data-aos="fade-left" [routerLink]="[ '/women' ]"
+        src="https://firebasestorage.googleapis.com/v0/b/cpcompany.appspot.com/o/images%2F454654ddc0654689cae6ce8827362ce8.jpg?alt=media&token=dabd23f1-7514-420b-8dde-a675bf0a6c4b"
+        class="card-img" style="height:100%;" alt="...">
+      <div class="card-img-overlay" class="content">
+        <h5 class="card-title">Для неї</h5>
+        <p class="card-text"></p>
+        <p class="card-text"></p>
+      </div>
+    </div>
+
+    <div class="card bg-dark text-white col-md-5">
+      <img data-aos="fade-right" [routerLink]="[ '/men' ]"
+        src="https://firebasestorage.googleapis.com/v0/b/cpcompany.appspot.com/o/images%2F56789.jpg?alt=media&token=eb937fe6-6e27-49d4-bdc7-9ab942289f06"
+        class="card-img" style="height:100%;">
+      <div class="card-img-overlay" class="content">
+        <h5 class="card-title">Для нього</h5>
+        <p class="card-text"></p>
+        <p class="card-text"></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="mainCards">
+
+    <div *ngFor="let pr of lastPro" class="product-card" [routerLink]="[ '/shop/'+pr.category, pr.id ]">
+      <img class="product-img" [attr.src]="pr.image[0]" alt="...">
+      <img class="product-hov-img" [attr.src]="pr.image[1]" alt="...">
+      <div class="proAbout">
+        <p [routerLink]="[ '/shop/'+pr.category, pr.id ]" class="proName">{{pr.name}}</p>
+        <p class="proPrice"> <s *ngIf="pr.oldPrice > 0" [style.font-weight]="'lighter'">{{pr?.oldPrice + '$'}}</s>
+          <a *ngIf="pr.oldPrice" class="text-danger"> -{{ pr?.oldPrice - pr?.newPrice + '$'}}</a>
+          {{pr?.newPrice + '$'}}</p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <img
+      src="https://firebasestorage.googleapis.com/v0/b/cpcompany.appspot.com/o/images%2Fvendor.jpg?alt=media&token=61b77122-5d57-481a-851c-118c5fa94602"
+      alt="">
+  </div>
+
+  <div [routerLink]="[ '/blog' ]" class="blogCont">
+    <img
+      src="https://firebasestorage.googleapis.com/v0/b/cpcompany.appspot.com/o/images%2FPantone-Fashion-Colo.jpg?alt=media&token=f4d7c057-6f29-4131-98f7-a43d65a31618">
+    <div class="content">
+      <h5>Читай найсвіжіші новини світу моди</h5>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="fb-page" data-href="https://www.facebook.com/alina.nohas" data-tabs="timeline" data-width="200px"
+    data-height="300px" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false"
+    data-show-facepile="true"></div>
+
+
+
+</div>

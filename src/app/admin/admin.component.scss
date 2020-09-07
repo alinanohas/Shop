@@ -1,0 +1,109 @@
+a:hover {
+  background-color: rgba(0, 0, 0, 0.137);
+  box-shadow: 0 5px 5px -5px #333;
+  border-radius: 5px;
+}
+
+.col-9 {
+  -webkit-box-flex: 0;
+  flex: 0 0 80%;
+  max-width: 80% !important;
+}
+
+.nav {
+  position: fixed;
+
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+a {
+  font-family: "Play";
+  font-size: 17px;
+  font-weight: bold;
+  color: black;
+}
+
+.basket-counter {
+  color: #ffffff;
+  background: #a78e7d;
+  line-height: 18px;
+  //   position: absolute;
+  // width: 18px;
+  // height: 18px;
+  //   top: 5px;
+  letter-spacing: 0;
+  //   right: 0px;
+  //   left: auto;
+  z-index: 9;
+  display: block;
+  font-weight: 400;
+  padding: 0px 6px;
+  text-transform: lowercase;
+  display: inline;
+  border-radius: 50%;
+  // font-size: 13px;
+  text-align: center;
+}
+
+.left-bar {
+  min-height: 100vh;
+  background: linear-gradient(to top, #ece9e6, #ffffff);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.logout {
+  height: 30px;
+  width: 100px;
+  border-radius: 10px;
+  background-color: #5da055;
+  text-align: center;
+  text-transform: uppercase;
+
+}
+
+@media all and (max-width : 770px) {
+
+  .col-9 {
+    max-width: 100% !important;
+    position: relative;
+    z-index: 0;
+    padding-top: 200px;
+    flex: 0 0 100%;
+    padding-top: 200px !important;
+  }
+
+  .left-bar {
+    display: flex;
+    min-width: 100% !important;
+    display: flex;
+    min-height: 180px;
+    position: fixed;
+    z-index: 1;
+
+  }
+
+  .flex-column {
+    flex-direction: row !important;
+  }
+}
+
+@media all and (max-width : 430px) {
+  .nav a{
+    font-size: 15px;
+  }
+}
+
+@media all and (max-width : 330px) {
+  #cont {
+    min-width: 140% !important;
+    padding-top: 200px !important;
+
+  }
+
+
+}

@@ -1,0 +1,232 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container-fluid {
+  width: 100%;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+
+.mainCards {
+  width: 90%;
+  display: flex;
+  padding: 20px 40px 0 25px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: auto;
+ 
+}
+
+.product-img,
+.product-hov-img {
+  height: 465px;
+  width: 310px;
+  transition: all 0.5s;
+}
+
+.product-hov-img {
+  display: none;
+}
+
+.product-card {
+  height: 520px;
+  width: auto;
+  position: relative;
+  overflow: hidden;
+
+  &:hover .product-hov-img {
+    display: inline;
+  }
+
+  &:hover .product-img {
+    display: none;
+  }
+}
+
+.product-card:hover .functional-buttons {
+  display: inline-block;
+  top: 15px;
+}
+
+//   .product-card:hover .product-img{
+//  height: 450px;
+// }
+
+
+.proAbout {
+  font-family: 'Play';
+  line-height: 15px;
+  letter-spacing: 0.7px;
+}
+
+
+
+.mainContent {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5px;
+  overflow: hidden;
+}
+
+.slide img{
+  width: 100%;
+  height: auto;
+  background-size: cover;
+  background-position: center bottom;
+}
+
+img {
+  //   position: absolute;
+  z-index: 1;
+  width: 100%;
+  // height: 100vh;
+}
+
+.card {
+  position: relative;
+  height: 90vh;
+  width: auto;
+  // margin: 10px 0 0 75px;
+  text-align: center;
+}
+
+.blogCont {
+  margin: 10px 0;
+  position: relative;
+}
+
+.card::after,
+.card::before,
+.blogCont::after,
+.blogCont::before {
+  content: "";
+  position: absolute;
+  opacity: 1;
+  transition: all 0.4s ease-out;
+  top: 1rem;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  max-width: 96%;
+}
+
+.card::before,
+.blogCont::before {
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  transform: scale(0, 1);
+}
+.fb-page{
+  height: 300px;
+  width: 300px;
+}
+.card::after,
+.blogCont::after {
+  border-left: 2px solid white;
+  border-right: 2px solid white;
+  transform: scale(1, 0);
+}
+
+.card:hover::before,
+.blogCont:hover::before {
+  background: rgba(0, 0, 0, 1);
+  transform: scale(1.05, 1);
+}
+
+.card:hover::after,
+.blogCont:hover::after {
+  transform: scale(1, 1.05);
+}
+
+.card .content,
+.blogCont .content {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 15px;
+  color: white;
+  opacity: 0;
+}
+
+.card:hover .content,
+.blogCont:hover .content {
+  opacity: 1;
+}
+
+.card .content h2,
+.card .content p {
+  padding: 10px;
+  font-size: 1.3rem;
+}
+
+.card .content h5,
+.blogCont .content h5 {
+  font-family: 'Play';
+  font-size: 60px;
+}
+
+.card:hover img,
+.blogCont:hover img {
+  opacity: 0.4;
+}
+@media all and (max-width : 1200px) {
+  .mainContent {
+    margin: 2% auto;
+    display: flex;
+    justify-content: space-around;
+  }
+  .product-card {
+    height: auto;
+    width: 30%;
+  }
+  }
+
+@media all and (max-width : 769px) {
+  .mainContent {
+    margin: 2% auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .product-card {
+    height: auto;
+    width: 30%;
+  }
+  .product-img, .product-hov-img {
+    height: 350px;
+    width: 100%;
+  }
+  .card {
+    margin: 1% auto;
+    width: auto;
+    height: 80vh;
+  }
+}
+@media all and (max-width : 430px) {
+  .product-card {
+    height: auto;
+    width: 80%;
+    margin: auto;
+  }
+}
+@media all and (max-width : 325px) {
+  .card {
+    margin: 1% auto;
+    width:auto;
+    height: 70vh;
+  }
+  .product-card {
+    height: auto;
+    width: 80%;
+    margin: auto;
+  }
+}

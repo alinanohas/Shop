@@ -1,0 +1,96 @@
+<div class="container payForm" style="padding-top: 100px;">
+  <nav ngbNav #nav="ngbNav" class="nav-tabs">
+    <ng-container ngbNavItem>
+      <a ngbNavLink>
+        <h1><i class="fas fa-user"></i></h1>
+        <h1>Вхід</h1>
+        <p>>I already have an account<</p> </a> <ng-template ngbNavContent>
+
+            <form id="login-form" #loginForm>
+              <p class="login-text">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-lock fa-stack-1x"></i>
+                </span>
+              </p>
+              <input [(ngModel)]="userEmail" name="userEmail" type="email" class="login-username" autofocus="true"
+                placeholder="Email" #email="ngModel" required pattern="[A-Za-z0-9_]+@[a-zA-Z_]+?\.[a-z]{2,3}" />
+
+              <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">*Некоректний email
+              </div>
+
+              <input [(ngModel)]="userPassword" name="userPassword" type="password" class="login-password"
+                required="true" placeholder="Password" />
+              <div class="alert "></div>
+
+              <input type="button" name="Login" value="Login" class="login-submit" (click)="login(email, password)" />
+
+            </form>
+            <!-- <a href="#" class="login-forgot-pass">forgot password?</a> -->
+            <div class="underlay-photo"></div>
+            <div class="underlay-black"></div>
+
+
+            </ng-template>
+    </ng-container>
+    <ng-container ngbNavItem>
+      <a ngbNavLink>
+        <h1><i class="fas fa-user-plus"></i></h1>
+        <h1>Реєстрація</h1>
+        <p>>I don't have an account<</p> </a> <ng-template ngbNavContent>
+
+            <form id="signup-form" #signupForm>
+              <p class="login-text">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-lock fa-stack-1x"></i>
+                </span>
+              </p>
+              <input [(ngModel)]="userEmailsignup" name="userEmailsignup" type="email" class="signup-username"
+                autofocus="true" required="true" placeholder="Email" />
+              <input [(ngModel)]="userPasswordsignup" name="userPasswordsignup" type="password" class="signup-password"
+                required="true" placeholder="Password" />
+              <div class="alert "></div>
+              <input type="button" name="signup" value="Registration" class="login-submit" (click)="signUp()" />
+            </form>
+            <!-- <a href="#" class="login-forgot-pass">forgot password?</a> -->
+            <div class="underlay-photo"></div>
+            <div class="underlay-black"></div>
+
+
+            </ng-template>
+    </ng-container>
+
+  </nav>
+
+  <div [ngbNavOutlet]="nav" class="mt-2"></div>
+
+
+
+
+  <!-- 
+    <h1>Реєстрація/Вхід</h1>
+  
+    <form class="form-group">
+  
+
+      <div class="form-group ">
+        <label for="exampleFormControlInput1">Email</label>
+        <input [(ngModel)]="userEmail" name="userEmail" type="text" class="form-control" id="userEmail"
+          placeholder="Email*" required pattern="[a-zA-Z_]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}">
+      </div>
+      <div class="form-group ">
+        <label for="exampleFormControlInput1">Password</label>
+        <input [(ngModel)]="userPassword" name="userPassword" type="text" class="form-control" id="userPassword"
+          placeholder="Password*" required>
+      </div>
+  
+ 
+  <input type="button" value="reg" (click)="signUp()">
+  <input type="button" value="login" (click)="login()">
+    </form>
+   -->
+
+
+
+</div>

@@ -1,0 +1,21 @@
+<div class="container-fluid">
+  <div class="cover-image">
+    <img [attr.src]="view?.image" class="cover-image"></div>
+  <h1 class="news-title">{{view?.title}}</h1>
+  <div class="image-block">
+
+    <img data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500" [attr.src]="view?.image" alt="...">
+  </div>
+
+  <div class="news-block">
+    <h2 class="h2-responsive">{{view?.category}}</h2>
+    <p>{{view?.news}}</p>
+  </div>
+  <div class="leftBar">
+    <h4 class="h4-responsive" style="text-align: center;">Читайте також</h4>
+    <div (click)="readBlog(bl)" class="blogs" *ngFor="let bl of blogs"><i class="fab fa-microblog"></i>
+      <p>{{bl.title}}</p>
+
+    </div>
+  </div>
+</div>

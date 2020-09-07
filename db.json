@@ -1,0 +1,471 @@
+{
+  "category": [
+    {
+      "id": 4,
+      "categoryName": "men"
+    },
+    {
+      "id": 5,
+      "categoryName": "women"
+    }
+  ],
+  "subcategory": [
+    {
+      "id": 1,
+      "subcategoryName": "Сукні"
+    },
+    {
+      "id": 2,
+      "subcategoryName": "Сорочки"
+    },
+    {
+      "id": 3,
+      "subcategoryName": "Футболки"
+    },
+    {
+      "id": 4,
+      "subcategoryName": "Штани"
+    },
+    {
+      "id": 5,
+      "subcategoryName": "Шорти"
+    },
+    {
+      "id": 6,
+      "subcategoryName": "Пальто"
+    },
+    {
+      "id": 7,
+      "subcategoryName": "Худі"
+    },
+    {
+      "id": 8,
+      "subcategoryName": "Тренч"
+    }
+  ],
+  "size": [
+    {
+      "id": 1,
+      "sizeName": "s"
+    },
+    {
+      "id": 2,
+      "sizeName": "m"
+    },
+    {
+      "id": 3,
+      "sizeName": "l"
+    },
+    {
+      "id": 4,
+      "sizeName": "xl"
+    }
+  ],
+  "color": [
+    {
+      "id": 4,
+      "colorName": "зелений"
+    },
+    {
+      "id": 5,
+      "colorName": "жовтий"
+    },
+    {
+      "id": 6,
+      "colorName": "червоний"
+    },
+    {
+      "id": 7,
+      "colorName": "чорний"
+    },
+    {
+      "id": 8,
+      "colorName": "сірий"
+    },
+    {
+      "id": 9,
+      "colorName": "фіолетовий"
+    },
+    {
+      "id": 10,
+      "colorName": "голубий"
+    },
+    {
+      "id": 11,
+      "colorName": "білий",
+      "selected": false
+    },
+    {
+      "id": 12,
+      "colorName": "Коричневий",
+      "selected": false
+    },
+    {
+      "id": 13,
+      "colorName": "бежевий",
+      "selected": false
+    }
+  ],
+  "vendor": [
+    {
+      "id": 1,
+      "vendorName": "Polo"
+    },
+    {
+      "id": 2,
+      "vendorName": "Versace"
+    },
+    {
+      "id": 3,
+      "vendorName": "Zara"
+    },
+    {
+      "id": 4,
+      "vendorName": "Lacoste"
+    },
+    {
+      "id": 5,
+      "vendorName": "Guess"
+    },
+    {
+      "id": 6,
+      "vendorName": "LEVI'S"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "category": "women",
+      "subcategory": "Сукні",
+      "size": "m",
+      "color": "голубий",
+      "vendor": "Zara",
+      "name": "Acid Wash Denim Chuck On Dress",
+      "description": "This acid wash denim chuck on dress is such a fashion favourite of ours. Simply throw on and go for effortless style. Contains recycled cotton. Using recycled cotton helps to conserve natural resources and prevents leftover textiles from being wasted. 80% Cotton, 20% Cotton Recycled. Machine wash.",
+      "oldPrice": 450,
+      "newPrice": 300,
+      "image": [
+        "https://firebasestorage.googleapis.com/v0/b/cpcompany.appspot.com/o/images%2Fc29e5825-ba85-4f9f-94ac-61ee13126a76.jpeg?alt=media&token=1448a16c-b5fb-48d0-b081-ee2d8dc78ee5",
+        "https://firebasestorage.googleapis.com/v0/b/cpcompany.appspot.com/o/images%2F0ea951db-6bb1-4d54-8a38-09a19ce8d12a.jpeg?alt=media&token=83ad255b-ae96-41fc-ad0e-c3b826ef6ca5"
+      ],
+      "count": 1
+    },
+    {
+      "id": 2,
+      "category": "women",
+      "subcategory": "Сукні",
+      "size": "s",
+      "color": "сірий",
+      "vendor": "Polo",
+      "name": "IDOL Grey Denim Sculpted Shirt Dress",
+      "description": "This grey denim sculpted shirt dress embraces structured silhouttes for a stylish and flattering feel. Contains organic cotton, which is grown without the use of chemical fertilisers, pesticides and Genetically Modified Organisms (GMOs) and has a lower impact on the environment. 100% Cotton Organic. Machine wash.",
+      "oldPrice": 300,
+      "newPrice": 250,
+      "image": [
+        "https://firebasestorage.googleapis.com/v0/b/cpcompany.appspot.com/o/images%2Fab85d96b-e015-4671-9e91-b7e684c11578.jpeg?alt=media&token=76e586f3-a53a-47f5-ad6f-1ce5a063149e",
+        "https://firebasestorage.googleapis.com/v0/b/cpcompany.appspot.com/o/images%2Fdd8c832f-f527-40b5-9fe1-e8cc987e7fcd.jpeg?alt=media&token=c946905b-98da-43a2-9ad0-8d1d9167f1e4"
+      ],
+      "count": 1
+    },
+    {
+      "id": 3,
+      "category": "women",
+      "subcategory": "Штани",
+      "size": "m",
+      "color": "голубий",
+      "vendor": "Lacoste",
+      "name": "Bleach Wash Mom Tapered Jeans",
+      "description": "These high waisted, tapered leg Mom jeans are designed in bleach authentic denim with rolled hem, making them an effortless pair to wear. We're accessorizing with an eye-catching bag for extra impact. Contains organic cotton, which is grown without the use of chemical fertilisers, pesticides and Genetically Modified Organisms (GMOs) and has a lower impact on the environment. 80% Cotton, 20% Cotton Organic. Machine wash.",
+      "oldPrice": 550,
+      "newPrice": 450,
+      "image": [
+        "https://firebasestorage.googleapis.com/v0/b/cpcompany.appspot.com/o/images%2F7119dd68-6cc6-4627-a684-4a2703e16d4d.jpeg?alt=media&token=11c5e658-9a12-4693-ab35-76325edb8de3",
+        "https://firebasestorage.googleapis.com/v0/b/cpcompany.appspot.com/o/images%2F2507157e-d04a-4390-915d-621450ab5784.jpeg?alt=media&token=2bef5c31-bf36-4858-aecf-0356438650a6"
+      ],
+      "count": 1
+    },
+    {
+      "id": 4,
+      "category": "women",
+      "subcategory": "Сукні",
+      "size": "l",
+      "color": "білий",
+      "vendor": "Versace",
+      "name": "IDOL Printed Lace Insert Shirt Dress",
+      "description": "This all over printed lace insert shirt dress is such a lovely design to own. Made with romantic ruffles and feminine frills...it's all in the stylish details, darling! Modernize your look with a belted accessory. 100% Polyester. Machine wash.",
+      "oldPrice": 500,
+      "newPrice": 490,
+      "image": [
+        "https://firebasestorage.googleapis.com/v0/b/cpcompany.appspot.com/o/images%2F747db476-f3fe-4e2c-a668-bed6901bbc3d.jpeg?alt=media&token=888c3145-d0e6-40c7-96d9-8211effe77ba",
+        "https://firebasestorage.googleapis.com/v0/b/cpcompany.appspot.com/o/images%2F8bbf71b7-19fe-419b-895f-0f18b87a0901.jpeg?alt=media&token=1a889c11-ef14-4233-8a11-873566826921"
+      ],
+      "count": 1
+    },
+    {
+      "id": 5,
+      "category": "men",
+      "subcategory": "Сорочки",
+      "size": "m",
+      "color": "білий",
+      "vendor": "Zara",
+      "name": "White Stretch Skinny Oxford Shirt",
+      "description": "Stretch skinny fit Short sleeves Stand collar With tab Casual style 98% Cotton, 2% Elastane Machine washable",
+      "oldPrice": 300,
+      "newPrice": 250,
+      "image": [
+        "https://firebasestorage.googleapis.com/v0/b/cpcompany.appspot.com/o/images%2F09219267-3711-4e3c-b57b-403b3c73466a.jpeg?alt=media&token=2d81b5db-6d6d-4a2e-84ea-75068762b5c9",
+        "https://firebasestorage.googleapis.com/v0/b/cpcompany.appspot.com/o/images%2F21624049-8c34-48ed-9c81-f63bc614e722.jpeg?alt=media&token=746514c2-2b2d-48a8-8c61-a20af1030df2"
+      ],
+      "count": 1
+    },
+    {
+      "id": 6,
+      "category": "men",
+      "subcategory": "Сорочки",
+      "size": "l",
+      "color": "чорний",
+      "vendor": "Guess",
+      "name": "CONSIDERED Black Overshirt",
+      "description": "Overshirt fit Classic collar shape Button fastening Casual style Part of a co-ord 100% Cotton Machine washable",
+      "oldPrice": 530,
+      "newPrice": 470,
+      "image": [
+        "https://firebasestorage.googleapis.com/v0/b/cpcompany.appspot.com/o/images%2F2f4c7ce9-de3a-4d95-87ff-d08afeaf2e16.jpeg?alt=media&token=63234a94-a356-4bb0-8fc2-5c4523462a0b",
+        "https://firebasestorage.googleapis.com/v0/b/cpcompany.appspot.com/o/images%2Ff921ff32-f85e-4794-8be6-934a3f551734.jpeg?alt=media&token=95a4073e-f0e2-419e-a557-cec75e579e50"
+      ],
+      "count": 1
+    },
+    {
+      "id": 7,
+      "category": "men",
+      "subcategory": "Штани",
+      "size": "l",
+      "color": "сірий",
+      "vendor": "Polo",
+      "name": "Stone Cargo Denim Joggers",
+      "description": "Jogger fit - stretch skinny fit - mid rise, skinny hips, skinny tapered leg, stretch denim Grey washed soft denim Pocket detail Drawcord waistband Cargo style 97% Cotton,3% Elastane Machine washable",
+      "oldPrice": 660,
+      "newPrice": 430,
+      "image": [
+        "https://firebasestorage.googleapis.com/v0/b/cpcompany.appspot.com/o/images%2F2c4f7c28-5c04-4e7c-971e-a4f9c16288ea.jpeg?alt=media&token=90812074-b29e-4c4d-ab32-b18b1ac8ad7e",
+        "https://firebasestorage.googleapis.com/v0/b/cpcompany.appspot.com/o/images%2F15333400-32be-42e0-b0a0-f527a099ed45.jpeg?alt=media&token=25ba9623-a5b5-41a0-9b9c-be4ed1d56bdf"
+      ],
+      "count": 1
+    },
+    {
+      "id": 8,
+      "category": "women",
+      "subcategory": "Шорти",
+      "size": "m",
+      "color": "голубий",
+      "vendor": "Lacoste",
+      "name": "Premium Blue Denim Mom Shorts",
+      "description": "Nod to vintage style that looks super classic with our premium fabric denim Mom shorts. Perfect for spring summer season! Contains recycled cotton. Using recycled cotton helps to conserve natural resources and prevents leftover textiles from being wasted.79% Cotton, 20% Cotton Recycled, 1% Elastane. Machine wash.\n\nModel's height is 5'9 and she wears a size 8.\nColour: MID STONE\nProduct Code: 05A89PMDT",
+      "newPrice": 500,
+      "image": [
+        "https://firebasestorage.googleapis.com/v0/b/cpcompany.appspot.com/o/images%2F2519b160-0521-4145-b90b-d33be2413d22.jpeg?alt=media&token=131f1dad-5aa5-459c-950f-01c8ca0dfe02",
+        "https://firebasestorage.googleapis.com/v0/b/cpcompany.appspot.com/o/images%2F99b85422-b10c-4d65-aff0-9208ddaf08ac.jpeg?alt=media&token=427fd6f2-7c25-430a-ab4b-012fd6f797b0"
+      ],
+      "count": 1
+    },
+    {
+      "id": 9,
+      "category": "women",
+      "subcategory": "Шорти",
+      "size": "s",
+      "color": "чорний",
+      "vendor": "Polo",
+      "name": "Black Topshop Cycling Shorts",
+      "description": "Update your classics with our black Topshop cycling shorts. Perfect underneath dresses or paired with stylish tops solo. 94% Viscose, 6% Elastane. Machine wash.\n\nModel's height is 5'9 and she wears a size 8.\nColour: BLACK\nProduct Code: 14T04SBLK",
+      "oldPrice": null,
+      "newPrice": 345,
+      "image": [
+        "https://firebasestorage.googleapis.com/v0/b/cpcompany.appspot.com/o/images%2Ff6b02752-17d7-4919-9e23-df9e77ee9522.jpeg?alt=media&token=430ecc8b-c4a7-4dae-8290-7f49c25e0624",
+        "https://firebasestorage.googleapis.com/v0/b/cpcompany.appspot.com/o/images%2F143edf76-9f25-483f-bddd-bf97f65c48b9.jpeg?alt=media&token=d1141e6e-b6e5-4e4f-8cf3-3e75f9547c47"
+      ],
+      "count": 1
+    },
+    {
+      "id": 10,
+      "category": "women",
+      "subcategory": "Сукні",
+      "size": "m",
+      "color": "чорний",
+      "vendor": "Zara",
+      "name": "Belted Luxe Jersey Midi Dress By Glamorous",
+      "description": "Black thick ribbed long sleeve midi dress with belting detail. 48% Viscose, 46% Polyester, 6% Elastane. Wash on 30. Do not tumble dry, iron on low heat.\n\n**PLEASE NOTE THIS ITEM CAN ONLY BE RETURNED VIA POST. STORES ARE UNABLE TO RETURN THESE ITEMS FOR YOU. ALL UK POSTAL RETURNS ARE FREE. INTERNATIONAL POSTAL CHARGES WILL VARY.\nColour: BLACK\nProduct Code: 62R30RBLK",
+      "oldPrice": 450,
+      "newPrice": 370,
+      "image": [
+        "https://firebasestorage.googleapis.com/v0/b/cpcompany.appspot.com/o/images%2Fcecc6500-6e1a-4585-8126-0b50af5ba383.jpeg?alt=media&token=82c53dc0-8b28-41c8-843c-095ffd73318c",
+        "https://firebasestorage.googleapis.com/v0/b/cpcompany.appspot.com/o/images%2Fa0c0bd79-ce8e-46f0-99ae-0aba9242a6eb.jpeg?alt=media&token=3f87624f-86a6-42a2-94e0-247797daa959"
+      ],
+      "count": 1
+    },
+    {
+      "id": 11,
+      "category": "men",
+      "subcategory": "Шорти",
+      "size": "m",
+      "color": "фіолетовий",
+      "vendor": "Lacoste",
+      "name": "Pale Lilac Jersey Shorts",
+      "description": "Skinny fit\nDrawstring waist\nBack welt pocket\nSide seam pockets\n58% Cotton, 42% Polyester\nMachine washable\nOur model wears a size medium\nModel measurements: Height: 6'2\"/1.88m\nColour: Purple\nProduct Code: 71U06RLIL",
+      "newPrice": 490,
+      "image": [
+        "https://firebasestorage.googleapis.com/v0/b/cpcompany.appspot.com/o/images%2F79b304f4-af8c-4cbb-8f22-2b6a5faefbb7.jpeg?alt=media&token=1537c435-cbb2-4ea8-aa97-f3fd46b1a3b5",
+        "https://firebasestorage.googleapis.com/v0/b/cpcompany.appspot.com/o/images%2Fd6070fb8-4dd0-4eb4-a931-ce74998e5c01.jpeg?alt=media&token=6493720c-dea4-4960-8fe1-97586f94eb21"
+      ],
+      "count": 1
+    },
+    {
+      "id": 12,
+      "category": "men",
+      "subcategory": "Пальто",
+      "size": "m",
+      "color": "Коричневий",
+      "vendor": "Polo",
+      "name": "Camel Overcoat With Wool",
+      "description": "Classic fit\nSingle breasted\nSide pockets\nWith a touch of wool\nLong sleeves\n63% Polyester, 32% Wool, 3% Acrylic, 1% Polyamide, 1% Viscose\nDry clean only\nColour: Brown\nProduct Code: 64D00TBRN",
+      "newPrice": 432,
+      "image": [
+        "https://firebasestorage.googleapis.com/v0/b/cpcompany.appspot.com/o/images%2F5a8b8c47-025f-4457-abfc-40a768a747bb.jpeg?alt=media&token=419674ee-dcc1-420f-a339-11f467aeef66",
+        "https://firebasestorage.googleapis.com/v0/b/cpcompany.appspot.com/o/images%2Fdd68750e-30a4-4a98-8c78-36b444348e4e.jpeg?alt=media&token=2ce49631-ca94-4814-841e-30c905c4c820"
+      ],
+      "count": 1
+    },
+    {
+      "id": 13,
+      "category": "men",
+      "subcategory": "Тренч",
+      "size": "m",
+      "color": "бежевий",
+      "vendor": "Lacoste",
+      "name": "Stone Coach Jacket",
+      "description": "Classic fit\nCoach style\nPopper fastening\nSide pockets\n67% Polyester,33% Cotton\nMachine washable\nOur model wears a size medium\nModel measurements: Height: 6'2\"/1.88m\nColour: Beige\nProduct Code: 64J00USTN",
+      "oldPrice": null,
+      "newPrice": 390,
+      "image": [
+        "https://firebasestorage.googleapis.com/v0/b/cpcompany.appspot.com/o/images%2Fc0e28c96-2b0a-4d72-a39a-a1759dcc26d4.jpeg?alt=media&token=cea63481-fd87-4a3b-a890-a2ef845688e0",
+        "https://firebasestorage.googleapis.com/v0/b/cpcompany.appspot.com/o/images%2F28f1b613-fd75-4c03-8cb9-bb38ce6a1935.jpeg?alt=media&token=a51c779e-441d-4f54-9b42-4ba7e94df654"
+      ],
+      "count": 1
+    },
+    {
+      "id": 14,
+      "category": "women",
+      "subcategory": "Сукні",
+      "size": "m",
+      "color": "сірий",
+      "vendor": "Guess",
+      "name": "Sequin Keyhole Midi Dress",
+      "description": "Our duck egg coloured all over sequin keyhole style dress will ensure you sparkle all evening. Dress up with our midi for a stunning and shining statement this season. 93% Polyester, 7% Elastane. Machine wash.\n\nModel's height is 5'9 and she wears a size 8.\nColour: DUCK EGG\nProduct Code: 10L26RDUC",
+      "oldPrice": null,
+      "newPrice": 830,
+      "image": [
+        "https://firebasestorage.googleapis.com/v0/b/cpcompany.appspot.com/o/images%2Fe8859d62-b8c5-4c24-8d3c-ae83d7668b2e.jpeg?alt=media&token=9cfae337-4718-47bd-967a-b9e8fbbb1af2",
+        "https://firebasestorage.googleapis.com/v0/b/cpcompany.appspot.com/o/images%2F5283201b-f652-4811-aa08-f70eaad5e681.jpeg?alt=media&token=89906063-4d36-4c1d-b8ad-02a80c5591e1",
+        "https://firebasestorage.googleapis.com/v0/b/cpcompany.appspot.com/o/images%2F30e19cd7-d2a8-4746-871d-b107bafb251b.jpeg?alt=media&token=73d508e8-cbcd-4bc8-96ed-a15451b2d74b"
+      ],
+      "count": 1
+    },
+    {
+      "id": 15,
+      "category": "men",
+      "subcategory": "Худі",
+      "size": "m",
+      "color": "бежевий",
+      "vendor": "LEVI'S",
+      "name": "LEVI'S Cream Authentic Hoodie",
+      "description": "An iconic brand around the globe, Levis has been the top choice for denim for over a century. Their contemporary range of jeans and clothing boasts timeless must-haves that youll want to wear again and again.\n\nClassic fit\nOverhead style\nLong sleeves\n100% Cotton\nMachine washable\nOur model wears a size medium\nModel measurements: Height: 6'2\"/1.88m\nColour: Cream\nProduct Code: 76V00TCRM",
+      "newPrice": 320,
+      "image": [
+        "https://firebasestorage.googleapis.com/v0/b/cpcompany.appspot.com/o/images%2F03c4629b-c7dd-4f44-aa23-f6f3216b531a.jpeg?alt=media&token=a495505c-71a6-4859-bcd3-7644ef1d49bd",
+        "https://firebasestorage.googleapis.com/v0/b/cpcompany.appspot.com/o/images%2F6f6828d1-8117-4290-b8d3-9d44c16e3e45.jpeg?alt=media&token=97eca07a-70ba-4240-b560-c091fa7d4781",
+        "https://firebasestorage.googleapis.com/v0/b/cpcompany.appspot.com/o/images%2F2e8b40e1-240f-4c88-941f-b62b36b324e9.jpeg?alt=media&token=16115e10-2605-4cf1-a57b-d7bb1e98ca60"
+      ],
+      "count": 1
+    },
+    {
+      "id": 16,
+      "category": "women",
+      "subcategory": "Тренч",
+      "size": "m",
+      "color": "бежевий",
+      "vendor": "Zara",
+      "name": "Cream Lipped Shoulder Duster Coat",
+      "description": "This cream lipped shoulder duster coat is a wonderful addition to add to your wardrobe. Look stylish all season long! For a spring summer interpretation, layer neutral tones for a classic take. 100% Polyester. Machine wash.\n\nModel's height is 5'9 and she wears a size 8.\nColour: CREAM\nProduct Code: 07L32SCRM",
+      "oldPrice": 700,
+      "newPrice": 534,
+      "image": [
+        "https://firebasestorage.googleapis.com/v0/b/cpcompany.appspot.com/o/images%2F28b8674a-1711-445e-ac82-281ec2c29f70.jpeg?alt=media&token=69f059af-141e-469d-b582-b07ffda78410",
+        "https://firebasestorage.googleapis.com/v0/b/cpcompany.appspot.com/o/images%2Fe6e6c381-e59a-413a-a0e4-5ff72c543282.jpeg?alt=media&token=08337234-2f57-4748-8418-63cd70b06f5d",
+        "https://firebasestorage.googleapis.com/v0/b/cpcompany.appspot.com/o/images%2Fa408b2e3-fe46-4d4f-a497-db0f0fa77293.jpeg?alt=media&token=47615804-54d0-4e6e-80e8-7eff524f6f90"
+      ],
+      "count": 1
+    }
+  ],
+  "blog": [
+    {
+      "id": 9,
+      "category": "An Eyes On The City Story",
+      "title": "Modern Contradictions",
+      "news": "Story Naples is a unique city. And by virtue of such uniqueness, it blends together its two very diverse souls, that run parallel along the path of history, yet never forgoing its roots; on the contrary, it has reinforced and toughened them, in order to build the future, while tradition and innovation merge and meet in a never-ending and stimulating play on shapes and colors and in a constant research based on the development of the urban setting and its various scenarios.\nOf course, the most important part are the clothes. Staying stylish in a heatwave is one of fashion’s hardest tasks but we think we’ve just about nailed it. Check out our edit of bikinis, sundresses and all the fun accessories to pair them with to make tanning in your garden chicer than ever. And if you are really feeling your Topshop outfit, don’t forget to share a snap to Instagram with the hashtag #TopshopStyle to be in the chance of winning a £100 gift card (so you can buy more Topshop clothes).\n4. The activity\nWe’ve recently been given a little more free range when it comes to our daily walks, so if that’s your thing check out our 7 Top Escapism Spots In London That Will Make You Feel Far Away. But if you’re actually looking to stay in, we would actually suggest trying to do as little as possible. There’s been a lot of pressure to always feel like you need to be doing something exciting each and every day – but when the weather is super hot it can be nice to just lie in the garden, listen to the playlist and drink the Frosé .",
+      "image": "https://firebasestorage.googleapis.com/v0/b/cpcompany.appspot.com/o/images%2Fc164a99b-a55c-4145-b177-63b5771b97ac.jpeg?alt=media&token=85566cce-f1d5-4b7b-a14b-341c2cf065bb"
+    },
+    {
+      "id": 10,
+      "category": "CULTURE",
+      "title": "5 Ways To Prepare For The Heatwave And Enjoy It At Home",
+      "news": "If you haven’t been outside yet today, we’ve got some good news for you: it’s boiling. Even better, it’s expected to stay warm and sunny outside for the next couple of weeks. It might seem like there are limited ways to enjoy the sunshine given the current circumstances -however, we’ve come up with a few ways you can prepare for the heatwave and make it the best it can be. From the perfect look to go tanning in the garden to a refreshing cocktail recipe, here’s how to feel like you’re on a holiday at home…\n\n1. The playlist\nIt’s no secret that music has a big impact on our mood, so when the sun decides to come out it’s only right that you put together an uplifting playlist to set the scene for everything else you get up to. If you don’t want to make one yourself, Spotify has tonnes you can choose from. Plus, if you’ve had Spotify for sometime now, they will have already put together a playlist of the songs you were loving last summer so you can reminisce.\n\n2. The refreshments\nHaving waiters serve us Piña Coladas by the pool seems like a very distant fantasy right now – alas, you can make yourself some summery drinks at home that will keep you cool, hydrated and if you close your eyes, make you feel like you’re on a tropical beach somewhere. Our favourite choice is a Frosé: pour a bottle of rosé into a deep roasting tin and freeze overnight. The next day mix some strawberries and a caster sugar and let them sit for around thirty minutes. Blend this with the frozen rosé and some lemon juice for an ultra refreshing slushy.\n4. The activity\nWe’ve recently been given a little more free range when it comes to our daily walks, so if that’s your thing check out our 7 Top Escapism Spots In London That Will Make You Feel Far Away. But if you’re actually looking to stay in, we would actually suggest trying to do as little as possible. There’s been a lot of pressure to always feel like you need to be doing something exciting each and every day – but when the weather is super hot it can be nice to just lie in the garden, listen to the playlist and drink the Frosé .\n\n5. The film\nFinally, when the evenings draw into a close, watching a super summery film can really transport you to a different place after a day of pretending to be anywhere but home. To make the most of the weather, we’d recommend taking the film outside and projecting it on a wall (if you have a projector, or a plain wall) or, if there’s just a couple of you watching the film you can just take your laptop outside instead. For the films we’d recommend putting on check out 7 Films That Will Make You Feel Like You’re On Holiday...",
+      "image": "https://firebasestorage.googleapis.com/v0/b/cpcompany.appspot.com/o/images%2Fd6bccc7a-8d96-4af0-8592-fc262da2e7c6.jpeg?alt=media&token=d4049c03-eae8-4ca0-bdbd-8a0b78de8037"
+    },
+    {
+      "id": 11,
+      "category": "READING LIST",
+      "title": "7 Of The Best Books To Read This May 2020",
+      "news": "As summer rapidly approaches, you might want to start thinking about the books you want to read during your garden tanning sessions. Whether you’re into gripping thrillers, romantic stories that transport you to a faraway place or educational material, we’ve found loads of books you might now have heard of but really should. Keep reading to create your perfect reading list for May 2020 and discover the best swimwear so you can coordinate the book cover to your sun-lounging look…\n\n1. Very Nearly Normal by Hannah Sunderland\nEffie’s not perfect. Neither is Theo. But together, they’re pretty close. But Theo has a life-changing secret, and as Effie starts to realise that she’s falling in love instead of falling apart, fate steps in and deals her a new hand. This book is the perfect pick-me-up to read during lockdown and perfect for fans of novels like Eleanor Oliphant is Completely Fine and Me Before You.\n\n2. Around the World in 80 Trains by Monisha Rajesh\nGet transported to a different place and follow Monisha Rajesh’s unforgettable adventure that takes her from London’s St Pancras station to the vast expanses of Russia and Mongolia, North Korea, Canada, Kazakhstan, and beyond. The journey is one of constant movement and mayhem as her and her fiancé strike up friendships and swap stories with the hilarious, irksome and ultimately endearing travellers they meet on board…\n\n3. After The End by Clare Mackintosh\nThis might just be the most hopeful book of 2020. Max and Pip are the strongest couple you know, only now they’re facing the most important decision of their lives – and they don’t agree. With the consequences of an impossible choice threatening to devastate them both, nothing will ever be the same again. You need to hear what happens after the end…\n\n4. Never Have I Ever by Joshilyn Jackson",
+      "image": "https://firebasestorage.googleapis.com/v0/b/cpcompany.appspot.com/o/images%2Fcbedeb44-919e-40ac-ad44-33bdd3711cda.jpeg?alt=media&token=d962c389-2370-4c7f-9dc1-19a792cc985d"
+    },
+    {
+      "id": 12,
+      "category": "FEATURED",
+      "title": "How To Style The Best Summer Denim For Warmer Days",
+      "news": "Warmer days bring cooler jeans: think fresh colours like white, ecru or pastels, tie-dye washes and bleached styles that guarantee great denim summer days. Not sure how to style your jeans for the new season? Don’t worry, we picked our five favourite jeans of the moment and combined them with our hottest new arrivals. Get inspired and shop the looks right here to nail summer dressing in denim…\n\n1. Crisp white\nThis season, we’ve been seeing white jeans everywhere but the straight fit adds a fresh twist to the summer staple. Style them with a fun crochet top, chic slides and a woven shell bag and you’ll feel like you’re strolling along the Cote d’Azur.\n\n2. Baby blue\nBlue jeans will always be a classic. Balance out the raw denim hem with cute frill details and soft colours for your top and mules. A summery woven bag will round the look off perfectly.\n\n3. Tie-dye envy\nIf you’re looking for something a little more out there, try tie-dye jeans. This print is already a loungewear favourite, so why not add it to your summer denim wardrobe? Style them super casually with a graphic tee and chunky trainers.\n\n4. Ecru dreams\nEcru, eggshell and cream are the underrated colours of the summer. These jeans are just as sophisticated as white ones, but a little less high maintenance. Pair with pink mules for a pop of colour.\n\n5. Distressed denim\nRipped dad jeans are super cool and casual. This summer we’re dressing them up with a black off-shoulder top and matching mules. Add some texture and colour to you look with a cross-body bag.",
+      "image": [
+        "https://firebasestorage.googleapis.com/v0/b/cpcompany.appspot.com/o/images%2F46ea3746-5c11-4558-adc9-9b6e636716ad.jpeg?alt=media&token=63bb7025-0b62-4fd7-9382-5164409c0b79"
+      ]
+    }
+  ],
+  "order": [
+    {
+      "id": 47,
+      "userName": "Taras",
+      "userPhone": "01234567",
+      "userCity": "Lviv",
+      "userStreet": "Zhovkivska",
+      "userHouse": "54",
+      "ordersDetails": [
+        {
+          "id": 5,
+          "category": "men",
+          "subcategory": "Сорочки",
+          "size": "m",
+          "color": "білий",
+          "vendor": "Zara",
+          "name": "White Stretch Skinny Oxford Shirt",
+          "description": "Stretch skinny fit Short sleeves Stand collar With tab Casual style 98% Cotton, 2% Elastane Machine washable",
+          "oldPrice": 300,
+          "newPrice": 250,
+          "image": [
+            "https://firebasestorage.googleapis.com/v0/b/cpcompany.appspot.com/o/images%2F09219267-3711-4e3c-b57b-403b3c73466a.jpeg?alt=media&token=2d81b5db-6d6d-4a2e-84ea-75068762b5c9",
+            "https://firebasestorage.googleapis.com/v0/b/cpcompany.appspot.com/o/images%2F21624049-8c34-48ed-9c81-f63bc614e722.jpeg?alt=media&token=746514c2-2b2d-48a8-8c61-a20af1030df2"
+          ],
+          "count": 1
+        }
+      ],
+      "totalPayment": 250,
+      "date": "2020-05-28T12:27:08.831Z"
+    }
+  ]
+}

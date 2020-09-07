@@ -1,0 +1,140 @@
+.navbar {
+  position: fixed;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.43);
+  width: 100%;
+  height: 85px;
+  color: white;
+  box-shadow: 0 5px 5px -5px #333;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.responsive {
+  height: auto !important;
+
+}
+
+.navbar-nav {
+  display: flex;
+  -webkit-box-flex: 1;
+  flex: 1 0 30vw;
+  justify-content: center;
+}
+
+
+
+.brand {
+  top: 0px;
+  transform: translateX(-50%);
+  left: 50%;
+  position: absolute;
+}
+
+.navbar-brand img {
+  height: 75px;
+  width: 150px;
+  padding: 10px;
+  -webkit-box-flex: 0;
+  flex: 0 1 20vw;
+  text-align: center;
+}
+
+.nav-item img {
+  height: 30px;
+  width: 30px;
+}
+
+a {
+  color: white;
+  font-size: 15px;
+  font-family: 'Play';
+  position: relative;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.nav-item-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-item {
+  margin: 0 0 0 45px;
+  display: flex;
+
+  &.panel {
+    flex-direction: column;
+    align-items: center;
+
+    & img {
+      height: 24px;
+      width: 25px;
+    }
+  }
+}
+
+.basket-counter {
+  color: #ffffff;
+  background: #a78e7d;
+  line-height: 18px;
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 5px;
+  letter-spacing: 0;
+  right: 0px;
+  left: auto;
+  z-index: 9;
+  display: block;
+  font-weight: 400;
+  padding: 0px 6px;
+  text-transform: lowercase;
+  display: block;
+  border-radius: 50%;
+  font-size: 13px;
+  text-align: center;
+}
+
+.header_change {
+  background: linear-gradient(to bottom, #ffffff, #d6d6d6);
+  // height: 75px;
+
+  & a {
+    color: black;
+    font-weight: bolder;
+  }
+}
+
+.navbar .icon {
+  display: none;
+}
+
+
+@media only screen and (max-width : 768px) {
+  .navbar-brand {
+    padding: 0px;
+    transform: translateX(-50%);
+    left: 50%;
+    // right: 50%;
+    position: absolute;
+  }
+
+  .navbar-brand>img {
+    height: 100%;
+    width: auto;
+    padding: 10px 25px;
+  }
+}
+
+
+/* Center Background */
+.navbar-brand {
+  transform: translateX(-50%);
+  left: 50%;
+  position: absolute;
+}
